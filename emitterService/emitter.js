@@ -60,5 +60,4 @@ function emitData() {
   socket.emit("data", messages); // emit the messages 
 }
 
-
 setInterval(emitData, 10000);
