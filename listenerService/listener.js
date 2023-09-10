@@ -4,12 +4,27 @@ const socketIo = require("socket.io");
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 const Message = require("./models/message");
-
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 const db = require('./dbConnection');
+console.log('path', path.join(__dirname, "./views"));
+
+app.set("views", path.join(__dirname, "./views"));
+app.set('view engine', 'ejs');
+
+app.get('/', async function(req, res) {
+    try {
+        let response = await Message.find();
+         res.render('./index', {response: response});
+    } catch(err){
+        console.log('err',err);
+        return res.json({status: 400, message: 'failed', error: err.message});
+    }
+});
+
 
 io.on("connection", (socket) => {
   console.log("Client connected");

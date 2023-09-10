@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted TimeSeries Task</title>
+    <!-- Include Bootstrap CSS here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% response.forEach(function (item) {  %>
+                    <tr>
+                         <td><%= item.name %></td>
+                         <td><%= item.origin %></td>
+                         <td><%= item.destination %></td>
+                         <td><%= item.timestamp %></td>
+                    </tr>
+                <%})%>
+           </tbody>
+        </table>
+    </div>
+    <!-- Include Bootstrap JavaScript and jQuery here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
