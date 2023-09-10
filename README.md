@@ -6,7 +6,7 @@ Step 1: Go to SyookTask\emitterService\emitter.js in terminal
 Step 2: Do npm install
 Step 3: Now run the command "npm start", then emitter service will get start and emits the messages.
 
-## How to run listenerService
+### How to run listenerService
 
 Note: Open another terminal
 Step 1: Go to SyookTask\listenerService\listener.js in terminal
